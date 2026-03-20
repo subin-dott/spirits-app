@@ -267,7 +267,7 @@ function AddEditView({ note, onChange, onSave, onCancel }) {
           <Inp label="날짜" type="date" value={note.date} onChange={e => onChange("date", e.target.value)} />
           <Inp label="가격" value={note.price} onChange={e => onChange("price", e.target.value)} placeholder="85,000원" />
         </div>
-        <Inp label="장소 / 바" value={note.location} onChange={e => onChange("location", e.target.value)} placeholder="강남 어느 바..." />
+        <Inp label="장소 / 바" value={note.location} onChange={e => onChange("location", e.target.value)} placeholder="Bar Tent" />
         <div style={{ display: "flex", alignItems: "center", gap: 10, cursor: "pointer" }} onClick={() => onChange("repurchase", !note.repurchase)}>
           <div style={{ width: 20, height: 20, borderRadius: 5, border: `2px solid ${note.repurchase ? C.green : C.border}`, background: note.repurchase ? C.green : "transparent", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
             {note.repurchase && <span style={{ color: "#fff", fontSize: 13, fontWeight: 700 }}>✓</span>}
@@ -742,7 +742,7 @@ export default function App() {
     view === "add"        ? (editNote?.id ? "노트 수정" : "노트 추가") :
     view === "detail"     ? (selectedNote?.name || "상세보기") :
     view === "stats"      ? "통계 & 분석" :
-    view === "compare"    ? "비교" : "🍶 스피릿 저널";
+    view === "compare"    ? "비교" : "🥃 위스키 노트";
 
   return (
     <div style={{ background: C.bg, minHeight: "100vh", color: C.text, fontFamily: "'DM Sans',sans-serif", maxWidth: 480, margin: "0 auto", position: "relative" }}>
