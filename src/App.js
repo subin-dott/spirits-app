@@ -22,7 +22,7 @@ const SPIRIT_TYPES = [
   { id: "cognac",   label: "꼬냑",          icon: "🍇", color: "#9a5a8a" },
   { id: "calvados", label: "칼바도스",      icon: "🍏", color: "#6a8a3a" },
   { id: "agave",    label: "아가베 스피릿", icon: "🌵", color: "#8a9a3a" },
-  { id: "other",    label: "기타",          icon: "🍶", color: "#7a6a5a" },
+  { id: "other",    label: "기타",          icon: "🍸", color: "#7a6a5a" },
 ];
 
 const STATUS_CFG = {
@@ -726,7 +726,7 @@ export default function App() {
   const selectedNote = notes.find(w => w.id === selectedId);
   const showNav = !["add", "detail", "add-select"].includes(view);
   const NAV = [
-  { id: "collection", icon: "🍶", label: "컬렉션" },
+  { id: "collection", icon: "🥃", label: "컬렉션" },
   { id: "bar",        icon: "🏠", label: "바 메뉴" },  
   { id: "stats",      icon: "📊", label: "통계" },
   { id: "compare",    icon: "⚖️", label: "비교" },
