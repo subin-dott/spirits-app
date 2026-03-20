@@ -1,6 +1,6 @@
 
 
-
+import BarMenuView from './BarMenu';
 import { useState, useEffect, useRef, startTransition } from "react";
 import {
   RadarChart, Radar, PolarGrid, PolarAngleAxis,
@@ -726,10 +726,12 @@ export default function App() {
   const selectedNote = notes.find(w => w.id === selectedId);
   const showNav = !["add", "detail", "add-select"].includes(view);
   const NAV = [
-    { id: "collection", icon: "🍶", label: "컬렉션" },
-    { id: "stats",      icon: "📊", label: "통계" },
-    { id: "compare",    icon: "⚖️", label: "비교" },
-  ];
+  { id: "collection", icon: "🍶", label: "컬렉션" },
+  { id: "bar",        icon: "🏠", label: "바 메뉴" },  
+  { id: "stats",      icon: "📊", label: "통계" },
+  { id: "compare",    icon: "⚖️", label: "비교" },
+];
+
 
   if (loading) return (
     <div style={{ background: C.bg, minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", color: C.gold, fontFamily: "'Playfair Display',serif", fontSize: 22 }}>
@@ -741,6 +743,12 @@ export default function App() {
     view === "add-select" ? "종류 선택" :
     view === "add"        ? (editNote?.id ? "노트 수정" : "노트 추가") :
     view === "detail"     ? (selectedNote?.name || "상세보기") :
+    {view === "bar" && (
+  <BarMenuView notes={notes} onAddToWishlist={(name, price) => {
+    const n = { ...newNote("whisky"), name, price: price.toLocaleString() + "원", status: "wishlist" };
+    save([...notesRef.current, { ...n, id: Date.now().toString(36) + Math.random().toString(36).slice(2) }]);
+  }} />
+)}
     view === "stats"      ? "통계 & 분석" :
     view === "compare"    ? "비교" : "🥃 위스키 노트";
 
