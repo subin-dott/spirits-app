@@ -346,7 +346,7 @@ function CollectionView({ notes, onSelect, onAdd, filter, setFilter, typeFilter,
       </div>
       {filtered.length === 0 ? (
         <div style={{ textAlign: "center", padding: "60px 0", color: C.textSec }}>
-          <div style={{ fontSize: 48, marginBottom: 12 }}>🍶</div>
+          <div style={{ fontSize: 48, marginBottom: 12 }}>🥃</div>
           <div style={{ fontSize: 16, fontFamily: "'Playfair Display',serif", marginBottom: 8 }}>아직 기록이 없어요</div>
           <div style={{ fontSize: 13 }}>+ 버튼으로 첫 테이스팅 노트를 추가해보세요</div>
         </div>
