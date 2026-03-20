@@ -12,7 +12,7 @@ red: “#8a3a2a”,
 
 const TENT_MENU = [
 {
-category: “🏴 Scotland”,
+category: “Scotland”,
 items: [
 { name: “Aberfeldy 21YO”, price: 32000 },
 { name: “Ardbeg Uigeadail”, price: 18000 },
