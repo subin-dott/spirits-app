@@ -338,7 +338,7 @@ function CollectionView({ notes, onSelect, onAdd, filter, setFilter, typeFilter,
         ))}
       </div>
       <div style={{ display: "flex", gap: 6, marginBottom: 16, overflowX: "auto", paddingBottom: 4 }}>
-        {[{ id: "all", label: "전체", color: C.accent, icon: "🍶" }, ...Object.entries(STATUS_CFG).map(([v, c]) => ({ id: v, ...c }))].map(s => (
+        {[{ id: "all", label: "전체", color: C.accent, icon: "🥃" }, ...Object.entries(STATUS_CFG).map(([v, c]) => ({ id: v, ...c }))].map(s => (
           <button key={s.id} onClick={() => setFilter(s.id)} style={{ whiteSpace: "nowrap", padding: "5px 11px", borderRadius: 20, fontSize: 11, cursor: "pointer", background: filter === s.id ? s.color + "22" : "transparent", border: `1px solid ${filter === s.id ? s.color : C.border}`, color: filter === s.id ? s.color : C.textSec, fontWeight: filter === s.id ? 600 : 400 }}>
             {s.icon} {s.label} ({sc[s.id]})
           </button>
