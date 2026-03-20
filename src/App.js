@@ -1,7 +1,7 @@
 
 
 import BarMenuView from './BarMenu';
-import { useState, useEffect, useRef, startTransition } from "react";
+import { useState, useEffect, useRef} from "react";
 import {
   RadarChart, Radar, PolarGrid, PolarAngleAxis,
   BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip,

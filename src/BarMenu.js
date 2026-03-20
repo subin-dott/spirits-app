@@ -1,5 +1,3 @@
-콘텐츠는 사용자가 생성한 것으로 검증되지 않았습니다.
-1
 import { useState } from "react";
 
 const C = {
