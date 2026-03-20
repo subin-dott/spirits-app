@@ -743,12 +743,6 @@ export default function App() {
     view === "add-select" ? "종류 선택" :
     view === "add"        ? (editNote?.id ? "노트 수정" : "노트 추가") :
     view === "detail"     ? (selectedNote?.name || "상세보기") :
-    {view === "bar" && (
-  <BarMenuView notes={notes} onAddToWishlist={(name, price) => {
-    const n = { ...newNote("whisky"), name, price: price.toLocaleString() + "원", status: "wishlist" };
-    save([...notesRef.current, { ...n, id: Date.now().toString(36) + Math.random().toString(36).slice(2) }]);
-  }} />
-)}
     view === "stats"      ? "통계 & 분석" :
     view === "compare"    ? "비교" : "🥃 위스키 노트";
 
@@ -801,6 +795,12 @@ export default function App() {
             onFetchAI={handleFetchAI}
             aiLoading={aiLoading} />
         )}
+        {view === "bar" && (
+  <BarMenuView notes={notes} onAddToWishlist={(name, price) => {
+    const n = { ...newNote("whisky"), name, price: price.toLocaleString() + "원", status: "wishlist" };
+    save([...notesRef.current, { ...n, id: Date.now().toString(36) + Math.random().toString(36).slice(2) }]);
+  }} />
+)}
         {view === "stats"   && <StatsView   notes={notes} />}
         {view === "compare" && <CompareView notes={notes} />}
       </div>
