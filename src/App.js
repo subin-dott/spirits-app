@@ -651,8 +651,8 @@ export default function App() {
   useEffect(() => {
     (async () => {
       try {
-        const r = await window.storage.get("spirits_v2");
-        if (r) setNotes(JSON.parse(r.value));
+        const r = localStorage.getItem("spirits_v2");
+        if (r) setNotes(JSON.parse(r));
       } catch (e) {}
       setLoading(false);
     })();
@@ -661,7 +661,7 @@ export default function App() {
   const save = async (updated) => {
     setNotes(updated);
     notesRef.current = updated;
-    try { await window.storage.set("spirits_v2", JSON.stringify(updated)); } catch (e) {}
+    try { localStorage.setItem("spirits_v2", JSON.stringify(updated)); } catch (e) {}
   };
 
   const handleSave = (note) => {
